@@ -22,6 +22,7 @@
       <p class="subtitle">
         <a href="companies.php?symbol=AMZN">LOGIN</a>
       </p>
+      <a href="about.php">About</a>
     </div>
     <div id="imgcredit">Image credit - @saketh_upadhya</div>
   </section>

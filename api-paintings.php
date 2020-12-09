@@ -16,8 +16,10 @@ try {
 
     if (isCorrectQueryStringInfo("gallery"))
         $paintings = $gateway->getAllForGallery($_GET["gallery"]);
-
+    else
+        $paintings = NULL;
     echo json_encode($paintings, JSON_NUMERIC_CHECK);
+    $conn = NULL;
 } catch (Exception $e) {
     die($e->getMessage());
 }

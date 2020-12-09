@@ -20,6 +20,7 @@ try {
         $paintings = $gateway->getAll();
 
     echo json_encode($paintings, JSON_NUMERIC_CHECK);
+    $conn = NULL;
 } catch (Exception $e) {
     die($e->getMessage());
 }
