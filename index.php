@@ -5,26 +5,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Home</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  <link rel="stylesheet" href="includes\styles.css">
+  <!--needs troubleshooting, css isn't working yet-->
 </head>
 
 <body>
   <section class="section">
-    <div class="container">
-      <h1 class="title">
-        <?php echo "Home Page v1"; ?>
-      </h1>
-      <hr>
-      <img src="images\monke_hero.jpg" />
-      <p class="subtitle">
-        <a href="companies.php">JOIN</a>
-      </p>
-      <p class="subtitle">
-        <a href="companies.php?symbol=AMZN">LOGIN</a>
-      </p>
-      <a href="about.php">About</a>
+    <div class="hero-image">
+      <div class="hero-text">
+        <p class="subtitle">
+          <a href="about.php">JOIN</a>
+        </p>
+        <p class="subtitle">
+          <a href="about.php">LOGIN</a>
+        </p>
+        <a href="about.php">About</a>
+        <div id="imgcredit">Image credit - @saketh_upadhya</div>
+      </div>
     </div>
-    <div id="imgcredit">Image credit - @saketh_upadhya</div>
+
+
   </section>
 </body>
 
