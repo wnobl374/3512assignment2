@@ -55,7 +55,7 @@ class PaintingDB
 
     public function getAllForTitle($title)
     {
-        $sql = self::$baseSQL . " WHERE Paintings.Title LIKE %?%";
+        $sql = self::$baseSQL . " WHERE Paintings.Title = ?"; //unsure of how to implement "contains" functionality here - usually it'd just be LIKE '%string%', but I don't think this works with the query method
         $statement = DatabaseHelper::runQuery(
             $this->pdo,
             $sql,
