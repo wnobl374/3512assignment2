@@ -11,6 +11,10 @@ if (isset($_GET['sort'])) {
     echo $_GET['sort'];
     if ($_GET['sort'] = "artist")
         $paintings = $paintingGate->getAllByArtist();
+    else if ($_GET['sort'] = "year")
+        $paintings = $paintingGate->getAllByYear();
+    else if ($_GET['sort'] = "title")
+        $paintings = $paintingGate->getAllByTitle();
 } else {
     $paintings = $paintingGate->getAll();
 }
@@ -19,4 +23,28 @@ if (isset($_GET['sort'])) {
 <!DOCTYPE html>
 <html lang=en>
 
-<a href="browse-paintings.php?<?php echo $_GET['sort']; ?>>Filter</a>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Browse</title>
+</head>
+
+<body>
+    <div>
+        <a href="browse-paintings.php?<?= $_GET['sort'] ?>">Filter</a>
+        <?php foreach ($paintings as $painting) {
+            echo $painting['FirstName'] . $painting['LastName'];
+        }
+        ?>
+    </div>
+    <form action="browse-paintings.php?<?= $_GET['sort'] ?>" method="GET">
+        Title <input type="text" name="title"><br>
+        Artist <br>
+        Gallery <br>
+
+
+        <input type="submit">
+    </form>
+</body>
+
+</html>

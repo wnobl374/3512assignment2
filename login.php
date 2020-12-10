@@ -42,9 +42,14 @@ function isLoginDataPresent()
 }
 
 ?>
+<!DOCTYPE html>
 <html>
 
-<head></head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+</head>
 <?php printHeader(); ?>
 
 <body>

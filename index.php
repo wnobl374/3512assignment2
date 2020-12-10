@@ -17,13 +17,14 @@ if (isLoggedIn()) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Home</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  <link rel="stylesheet" href="includes/styles.css">
   <!--needs troubleshooting, css isn't working yet-->
 </head>
-<?php printHeader() ?>
+<?php printHeader(); ?>
 
 <body>
   <section class="section">
-    <div class="hero-image">
+    <div class="hero">
       <div class="hero-text">
         <p class="subtitle">
           <a href="https://youtu.be/dQw4w9WgXcQ">JOIN</a>
@@ -31,8 +32,8 @@ if (isLoggedIn()) {
         <p class="subtitle">
           <a href="single-painting.php?id=7">LOGIN</a>
         </p>
-        <a href="about.php">About</a>
-        <a href="browse-paintings.php">Browse</a>
+
+
 
       </div>
     </div>

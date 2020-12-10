@@ -75,6 +75,28 @@ class PaintingDB
         return $statement->fetchAll();
     }
 
+    public function getAllByYear()
+    {
+        $sql = self::$baseSQL . " ORDER BY YearOfWork";
+        $statement = DatabaseHelper::runQuery(
+            $this->pdo,
+            $sql,
+            null
+        );
+        return $statement->fetchAll();
+    }
+
+    public function getAllByTitle()
+    {
+        $sql = self::$baseSQL . " ORDER BY Title";
+        $statement = DatabaseHelper::runQuery(
+            $this->pdo,
+            $sql,
+            null
+        );
+        return $statement->fetchAll();
+    }
+
     public function getPainting($paintingID)
     {
         $sql = self::$baseSQL . "WHERE PaintingID = ?";

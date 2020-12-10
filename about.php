@@ -1,3 +1,7 @@
+<?php
+require_once('includes/header.php');
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -5,8 +9,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>About</title>
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
 </head>
+<?php printHeader(); ?>
 
 <body>
     <section class="section">
@@ -21,6 +26,7 @@
                 Steven Soklofske - <a href="https://github.com/ssokl601">github</a>.</p>
             <p><a href="https://github.com/wnobl374/3512assignment2">Source code repository</a>.</p>
             <p>Much of the code is repurposed from the course material, but any otherwise outsourced code will be mentioned here.</p>
+            <p>Currently uses Bulma, but this may change before the final release</p>
         </div>
     </section>
 </body>

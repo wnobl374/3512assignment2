@@ -1,10 +1,9 @@
 <?php
 ini_set('display_errors', 1);
 
+require_once('includes/header.php');
 require_once('lib/db-classes.class.php');
 require_once('lib/DatabaseHelper.class.php');
-
-
 
 $paintingGate = new PaintingDB($connection);
 if (isset($_GET['id'])) {
@@ -50,11 +49,13 @@ if (isset($_GET['id'])) {
 
     <div id="Colors" class="tabcontent">
         <h3>Colors</h3>
-        <p><?php//unsure how to parse this properly for now
+        <p>
+            <!--//unsure how to parse this properly for now
             $Annotations = json_decode($painting['JsonAnnotations']);
             foreach ($Annotations as $colors) {
                 echo $colors;
-            }; ?></p>
+            }; ?>-->
+        </p>
     </div>
 </body>
 

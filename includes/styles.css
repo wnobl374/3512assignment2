@@ -4,7 +4,7 @@ html {
 }
 
 /* this hero-image implementation is based on https://www.w3schools.com/howto/howto_css_hero_image.asp*/
-.hero-image {
+.hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images\monke_hero.jpg");
     height: 50%;
     background-position: center;
