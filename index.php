@@ -33,14 +33,14 @@ if (isLoggedIn()) {
           <a href="single-painting.php?id=7">LOGIN</a>
         </p>
 
-
+        <p><?= $welcome ?>?></p>
 
       </div>
     </div>
 
 
   </section>
-  <footer id="imgcredit"><?= $welcome ?>Image credit - @saketh_upadhya</footer>
+  <footer id="imgcredit"> Image credit - @saketh_upadhya</footer>
 </body>
 
 </html>

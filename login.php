@@ -7,7 +7,10 @@ require_once('includes/header.php');
 
 ini_set('display_errors', 1);
 
-session_start();
+if (session_id() == '' || !isset($_SESSION)) {
+    session_start();
+}
+
 $msg = '';
 if (isLoginDataPresent()) {
     try {
