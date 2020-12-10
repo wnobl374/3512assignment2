@@ -42,7 +42,7 @@ if (isset($_GET['sort'])) {
             </tr>
             <?php foreach ($paintings as $painting) {
                 echo "<tr>";
-            ?> "<td><a href='single-painting.php?id=<?= $painting['PaintingID'] ?>'><img src='images\paintings\square\<?= $painting['ImageFileName'] ?>.jpg' width=150></td>";
+            ?> "<td><a href='single-painting.php?id=<?= $painting['PaintingID'] ?>'><img src='images\paintings\square\<?= $painting['ImageFileName'] ?>.jpg' width=150></td>
             <?php
                 echo "<td>" . $painting['FirstName'] . " " . $painting['LastName'] . "</td>";
                 echo "<td>" . $painting['Title'] . "</td>";

@@ -4,7 +4,7 @@ require_once('includes/header.php');
 ini_set('display_errors', 1);
 $welcome = "";
 if (isLoggedIn()) {
-  $welcome = "Welcome back " . $_SESSION['user'];
+  $welcome = "Currently logged in: User " . $_SESSION['user'];
 }
 ?>
 
