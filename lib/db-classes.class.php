@@ -123,7 +123,7 @@ class PaintingDB
 class GalleryDB
 {
 
-    private static $baseSQL = "SELECT GalleryID, GalleryName FROM Galleries ORDER BY GalleryName";
+    private static $baseSQL = "SELECT GalleryID, GalleryName, GalleryNativeName, GalleryCity, GalleryAddress, GalleryCountry, GalleryWebSite FROM Galleries ORDER BY GalleryName";
     public function __construct($connection)
     {
         $this->pdo = $connection;

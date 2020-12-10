@@ -1,0 +1,421 @@
+/* formatting of basic elements */
+
+h1 {
+    font-size: 175%;
+    font-weight: 800;
+    padding: 10px 0px;
+}
+
+h2 {
+    font-size: 150%;
+    font-weight: 500;
+    padding: 10px 0px;
+}
+.clickable {
+    color: darkblue;
+}
+.clickable:hover {
+    cursor: pointer;
+    color: blue;
+}
+
+/* grid setup */
+
+body {
+    background-color: #1f004e;
+    padding: 10px;
+}
+
+.container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: auto 250px auto auto;
+}
+
+.container.lessPaint {
+    grid-template-columns: 300px 450px 1fr;
+}
+
+.container.morePaint {
+    grid-template-columns: 375px minMax(500px, 1fr) 1fr;
+}
+
+.box {
+    background-color: #dac5f8;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#header {
+    grid-column: 1 / span 3;
+}
+
+#gallerList {
+    display: none;
+}
+
+#galleries {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 2;
+}
+
+#galleries.morePaint {
+    display: none;
+}
+
+#galleries.lessPaint {
+    display: block;
+}
+
+#galleryInfo {
+    display: none;
+    grid-row: 2 / span 1;
+}
+
+#galleryInfo * {
+    text-align: center;
+}
+
+#galleryInfo.lessPaint {
+    display: block;
+    grid-column: 2 / span 1;
+}
+
+#galleryInfo.morePaint {
+    display: block;
+    grid-column: 1 / span 1;
+}
+
+#infoBox {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#galleryInfo.focus {
+    display: none;
+}
+
+#googleMap {
+    display: none;
+    grid-row: 3 / span 1;
+    padding: 0px;
+}
+
+#googleMap.lessPaint {
+    display: block;
+    grid-column: 2 / span 1;
+}
+
+#googleMap.morePaint {
+    display: block;
+    grid-column: 1 / span 1;
+}
+
+#googleMap.focus {
+    display: none;
+}
+
+#map {
+    height: 450px;
+    border-radius: 8px;
+}
+
+#paintingList {
+    display: none;
+    grid-row: 2 / span 3;
+}
+
+#paintingList.lessPaint {
+    display: block;
+    grid-column: 3 / span 1;
+}
+
+#paintingList.morePaint {
+    display: block;
+    grid-column: 2 / span 2;
+}
+
+#paintingList.focus {
+    display: block;
+    grid-column: 1 / span 3;
+}
+
+#smallImages.hide {
+    display: none;
+}
+
+#arrowBox {
+    padding-top: 5px;
+    display: grid;
+    grid-column-start: 1;
+    justify-content: center;
+    background-color: rgb(119, 0, 255);
+}
+
+.b5a #table {
+    grid-column-start: 2;
+}
+
+.b5a {
+    display: grid;
+    grid-template-columns: 30px auto;
+}
+
+.more-less {
+    color: white;
+    font-weight: 1000;
+    font-size: 14pt;
+}
+
+.more-less.bottom {
+    display: flex;
+    align-self: flex-end;
+}
+
+.more-less.top.sticky {
+    position: sticky;
+    top: 0;
+}
+
+#paintings {
+    table-layout: auto;
+    width: 100%;
+}
+
+#paintings tr:nth-child(odd) {
+    background-color: #d3b6ff;
+}
+
+#paintings tr:nth-child(even) {
+    background-color: #8533ff;
+    color: white;
+}
+
+#paintings th {
+    padding: 20px;
+    background-color: #3d0099;
+    color: white;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+#paintings td {
+    text-align: center;
+    padding: 10px;
+}
+
+#paintings.lessPaint td:first-child {
+    width: 150px;
+}
+
+#paintings.morePaint td:first-child {
+    width: 250px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+#bigImage {
+    display: none;
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 3;
+}
+
+#bigImage .imageBox{
+    display: flex;
+    align-self: center;
+}
+
+#bigImage .colors {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#bigImage .colors div {
+    width: 50px;
+    width: 16%;
+    height: 50px;
+}
+
+#bigImage .details {
+    display: grid;
+}
+
+#bigImage .details div {
+    padding: 20px 0px;
+}
+
+#bigImage .details div:nth-child(2) {
+    display: flex;
+    justify-self: center;
+    align-items: flex-end;
+}
+
+#bigImage .details li {
+    text-align: center;
+}
+
+#bigImage .description {
+    text-align: center;
+}
+
+#bigImage .description p {
+    vertical-align: middle;
+
+}
+
+#bigImage .img-nav {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr auto;
+}
+
+#bigImage .header {
+    display: grid;
+    justify-content: center;
+}
+
+#bigImage .header * {
+    text-align: center;
+}
+
+.img-nav .navigate {
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+}
+
+.img-nav .navigate button {
+    background-color: rgb(116, 66, 255);
+    width: 50px;
+    color: white;
+    font-size: 125%;
+}
+
+#bigImage.banner {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+}
+
+#bigImage.banner .header {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+}
+
+#bigImage.banner .details {
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+}
+
+#bigImage.banner .img-nav {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 1;
+}
+
+#bigImage.banner .description {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+}
+
+#bigImage.landscape {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+}
+
+#bigImage.landscape .img-nav {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 1;
+}
+
+#bigImage.landscape .header {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+}
+
+#bigImage.landscape .description {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+}
+
+#bigImage.landscape .details {
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+}
+
+#bigImage.square {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+}
+
+#bigImage.square .header {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+}
+
+#bigImage.square .img-nav {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 3;
+}
+
+#bigImage.square .description {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+}
+
+#bigImage.square .details {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+}
+
+#bigImage.portrait {
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+}
+
+#bigImage.portrait .img-nav {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 3;
+}
+
+#bigImage.portrait .header {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+}
+
+#bigImage.portrait .details {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+}
+
+#bigImage.portrait .description {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+}
+
+#bigImage .imageBox {}
+
+.hide {
+    display: none;
+}
+
+.thumbnail {
+    width: 250px;
+    height: 250px;
+}
+
+.notThumbnail {
+    width: 350px;
+    height: 350px;
+}
