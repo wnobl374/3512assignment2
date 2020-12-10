@@ -11,9 +11,10 @@ if (isset($_GET['sort'])) {
     echo "Sorting by" . $_GET['sort'];
     if ($_GET['sort'] = "artist")
         $paintings = $paintingGate->getAllByArtist();
-    else if ($_GET['sort'] = "year")
+    else if ($_GET['sort'] = "year") {
+        echo "Should be sorting by Year";
         $paintings = $paintingGate->getAllByYear();
-    else if ($_GET['sort'] = "title")
+    } else if ($_GET['sort'] = "title")
         $paintings = $paintingGate->getAllByTitle();
 } else if (isset($_GET['title'])) {
     $paintings = $paintingGate->getAllForTitle($_GET['title']);
@@ -42,7 +43,7 @@ if (isset($_GET['sort'])) {
             </tr>
             <?php foreach ($paintings as $painting) {
                 echo "<tr>";
-            ?> "<td><a href='single-painting.php?id=<?= $painting['PaintingID'] ?>'><img src='images\paintings\square\<?= $painting['ImageFileName'] ?>.jpg' width=150></td>
+            ?> <td><a href='single-painting.php?id=<?= $painting['PaintingID'] ?>'><img src='images\paintings\square\<?= $painting['ImageFileName'] ?>.jpg' width=150></td>
             <?php
                 echo "<td>" . $painting['FirstName'] . " " . $painting['LastName'] . "</td>";
                 echo "<td>" . $painting['Title'] . "</td>";
