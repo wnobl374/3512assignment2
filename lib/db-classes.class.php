@@ -1,4 +1,6 @@
 <?php
+require_once('DatabaseHelper.class.php');
+
 class ArtistDB
 {
     private static $baseSQL = "SELECT * FROM Artists
@@ -110,6 +112,35 @@ class GalleryDB
             $this->pdo,
             $sql,
             array($galleryID)
+        );
+        return $statement->fetch();
+    }
+}
+
+class CustomerDB
+{
+    private static $baseSQL = "SELECT * FROM CustomerLogon";
+    public function __construct($connection)
+    {
+        $this->pdo = $connection;
+    }
+    public function getAll()
+    {
+        $sql = self::$baseSQL;
+        $statement = DatabaseHelper::runQuery(
+            $this->pdo,
+            $sql,
+            null
+        );
+        return $statement->fetchAll();
+    }
+    public function findCustomer($username)
+    {
+        $sql = self::$baseSQL . " WHERE UserName=?";
+        $statement = DatabaseHelper::runQuery(
+            $this->pdo,
+            $sql,
+            array($username)
         );
         return $statement->fetch();
     }

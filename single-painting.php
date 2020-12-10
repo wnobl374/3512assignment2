@@ -1,10 +1,10 @@
 <?php
-require_once('includes/stock-config.inc.php');
-require_once('includes/service-utilities.inc.php');
+ini_set('display_errors', 1);
+
 require_once('lib/db-classes.class.php');
 require_once('lib/DatabaseHelper.class.php');
 
-ini_set('display_errors', 1);
+
 
 $paintingGate = new PaintingDB($connection);
 if (isset($_GET['id'])) {
@@ -20,7 +20,9 @@ if (isset($_GET['id'])) {
 <head>
     <title>Painting Details</title>
     <meta charset=utf-8>
+</head>
 
+<body>
     <div>
         <img src="images\paintings\square\<?= $painting['ImageFileName'] ?>.jpg">
     </div>
@@ -54,7 +56,6 @@ if (isset($_GET['id'])) {
                 echo $colors;
             }; ?></p>
     </div>
-
-    </body>
+</body>
 
 </html>
