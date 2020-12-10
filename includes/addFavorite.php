@@ -1,3 +1,7 @@
 <?php
-if (isset ($_SESSION['favorites']))
-Location: favorites.php
+/*if (isset ($_SESSION['favorites'])){
+    if ($_SESSION)
+} else {
+    $_SESSION['favorites'] = 
+}*/
+header('Location: favorites.php');

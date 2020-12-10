@@ -10,6 +10,9 @@ ini_set('display_errors', 1);
 if (session_id() == '' || !isset($_SESSION)) {
     session_start();
 }
+if (isset($_SESSION['user'])) {
+    header('Location: index.php');
+}
 
 $msg = '';
 if (isLoginDataPresent()) {
@@ -24,6 +27,7 @@ if (isLoginDataPresent()) {
             if ($calculatedDigest == $digestInDatabase) {
                 $_SESSION['user'] = $found['CustomerID'];
                 unset($_SESSION['favorites']);
+                $_SESSION['favorites'] = [];
                 header('Location: index.php');
                 exit();
             } else {
