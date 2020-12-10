@@ -25,6 +25,7 @@ if (isLoggedIn()) {
 <body>
   <section class="section">
     <div class="hero">
+      <img src="images\monke_hero.jpg" width="500"><!-- remove this and implement as hero-->
       <div class="hero-text">
         <p class="subtitle">
           <a href="https://youtu.be/dQw4w9WgXcQ">JOIN</a>
@@ -33,7 +34,7 @@ if (isLoggedIn()) {
           <a href="single-painting.php?id=7">LOGIN</a>
         </p>
 
-        <p><?= $welcome ?>?></p>
+        <p><?= $welcome ?></p>
 
       </div>
     </div>

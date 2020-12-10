@@ -23,6 +23,7 @@ if (isLoginDataPresent()) {
             $digestInDatabase = $found['Password_sha256'];
             if ($calculatedDigest == $digestInDatabase) {
                 $_SESSION['user'] = $found['CustomerID'];
+                unset($_SESSION['favorites']);
                 header('Location: index.php');
                 exit();
             } else {

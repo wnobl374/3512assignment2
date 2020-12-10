@@ -53,6 +53,17 @@ class PaintingDB
         return $statement->fetchAll();
     }
 
+    public function getAllForTitle($title)
+    {
+        $sql = self::$baseSQL . " WHERE Paintings.Title LIKE %?%";
+        $statement = DatabaseHelper::runQuery(
+            $this->pdo,
+            $sql,
+            array($title)
+        );
+        return $statement->fetchAll();
+    }
+
     public function get20()
     {
         $sql = self::$baseSQL . " ORDER BY YearOfWork LIMIT 20";
@@ -66,7 +77,7 @@ class PaintingDB
 
     public function getAllByArtist()
     {
-        $sql = self::$baseSQL . " ORDER BY Artist";
+        $sql = self::$baseSQL . " ORDER BY Paintings.ArtistID";
         $statement = DatabaseHelper::runQuery(
             $this->pdo,
             $sql,

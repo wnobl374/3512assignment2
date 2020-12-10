@@ -21,3 +21,7 @@ html {
     transform: translate(-50%, -50%);
     color: white;
 }
+
+#imgcredit {
+    font-size: 8px;
+}
