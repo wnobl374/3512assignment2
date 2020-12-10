@@ -17,7 +17,7 @@ class ArtistDB
 }
 class PaintingDB
 {
-    private static $baseSQL = "SELECT PaintingID, Paintings.ArtistID, FirstName, LastName, Paintings.GalleryID, GalleryName, ImageFileName, Title, Excerpt, YearOfWork FROM Galleries INNER JOIN (Artists INNER JOIN Paintings ON Artists.ArtistID = Paintings.ArtistID) ON Galleries.GalleryID = Paintings.GalleryID ";
+    private static $baseSQL = "SELECT PaintingID, Paintings.ArtistID, FirstName, LastName, Paintings.GalleryID, GalleryName, ImageFileName, Title, Excerpt, YearOfWork, Description, JsonAnnotations, Width, Height, CopyrightText, WikiLink, MuseumLink, Medium FROM Galleries INNER JOIN (Artists INNER JOIN Paintings ON Artists.ArtistID = Paintings.ArtistID) ON Galleries.GalleryID = Paintings.GalleryID ";
     public function __construct($connection)
     {
         $this->pdo = $connection;
@@ -54,6 +54,17 @@ class PaintingDB
     public function get20()
     {
         $sql = self::$baseSQL . " ORDER BY YearOfWork LIMIT 20";
+        $statement = DatabaseHelper::runQuery(
+            $this->pdo,
+            $sql,
+            null
+        );
+        return $statement->fetchAll();
+    }
+
+    public function getAllByArtist()
+    {
+        $sql = self::$baseSQL . " ORDER BY Artist";
         $statement = DatabaseHelper::runQuery(
             $this->pdo,
             $sql,
