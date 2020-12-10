@@ -31,17 +31,22 @@ if (isLoggedIn()) {
           <a href="https://youtu.be/dQw4w9WgXcQ">JOIN</a>
         </p>
         <p class="subtitle">
-          <a href="single-painting.php?id=7">LOGIN</a>
+          <a href="login.php">LOGIN</a>
         </p>
 
-        <p><?= $welcome ?></p>
+        <form action="browse-paintings.php" method="GET">
+          <input type="search" name="title" placeholder="SEARCH BOX FOR PAINTINGS">
+        </form>
 
       </div>
     </div>
 
 
   </section>
-  <footer id="imgcredit"> Image credit - @saketh_upadhya</footer>
+  <footer id="imgcredit">
+    <p><?= $welcome ?></p>
+    <p>Image credit - @saketh_upadhya</p>
+  </footer>
 </body>
 
 </html>

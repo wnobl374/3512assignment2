@@ -20,13 +20,18 @@ if (!isLoggedIn()) {
 </head>
 <?php printHeader(); ?>
 <section>
-    <?php foreach ($_SESSION['favorites'] as $fav) {
-    ?><div>
-            <a href="single-painting.php?id=<?= $fav['PaintingID'] ?>"><img src="images\paintings\square\<?= $fav['ImageFileName'] ?>.jpg" width="150"></a>
-            <a href="single-painting.php?id=<?= $fav['PaintingID'] ?>"><?= $fav['Title'] ?></a>
-        </div>
-    <?php
-    }
-    ?>
+    <table>
+        <tr>
+            <th></th>
+        </tr>
+        <?php foreach ($_SESSION['favorites'] as $fav) {
+        ?><tr>
+                <td> <a href="single-painting.php?id=<?= $fav['PaintingID'] ?>"><img src="images\paintings\square\<?= $fav['ImageFileName'] ?>.jpg" width="150"></a>
+                <td> <a href="single-painting.php?id=<?= $fav['PaintingID'] ?>"><?= $fav['Title'] ?></a>
+            </tr>
+        <?php
+        }
+        ?>
 
+    </table>
 </section>

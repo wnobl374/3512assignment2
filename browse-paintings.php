@@ -3,6 +3,7 @@ require_once('includes/stock-config.inc.php');
 require_once('includes/service-utilities.inc.php');
 require_once('lib/db-classes.class.php');
 require_once('lib/DatabaseHelper.class.php');
+require_once('includes/header.php');
 
 ini_set('display_errors', 1);
 
@@ -31,6 +32,7 @@ if (isset($_GET['sort'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Browse</title>
 </head>
+<?php printHeader(); ?>
 
 <body>
     <div>
@@ -40,21 +42,32 @@ if (isset($_GET['sort'])) {
                 <th><a href='browse-paintings.php?sort=artist'>Artist</a></th>
                 <th> <a href='browse-paintings.php?sort=title'>Title</a></th>
                 <th> <a href='browse-paintings.php?sort=year'>YearOfWork</th>
+                <th></th>
+                <th></th>
             </tr>
             <?php foreach ($paintings as $painting) {
                 echo "<tr>";
             ?> <td><a href='single-painting.php?id=<?= $painting['PaintingID'] ?>'><img src='images\paintings\square\<?= $painting['ImageFileName'] ?>.jpg' width=150></td>
-            <?php
+                <?php
                 echo "<td>" . $painting['FirstName'] . " " . $painting['LastName'] . "</td>";
                 echo "<td>" . $painting['Title'] . "</td>";
                 echo "<td>" . $painting['YearOfWork'] . "</td>";
-                echo "</tr>";
+                echo "<td><a href='includes/addFavorite.php?id=" . $painting['PaintingID'] . "'>Add to Favorites</a></td>";
+                ?> <td><a href='single-painting.php?id=<?= $painting['PaintingID'] ?>'>View</a></td>
+            <?php
+                echo "Is this working? </tr>";
             }
             ?>
     </div>
     <form action="browse-paintings.php?<?= $_GET['sort'] ?>" method="GET">
-        Title <input type="text" name="title"><br>
-        Artist <br>
+        <label for "title">Title</label>Title <input type="text" name="title"><br>
+        <label for "artist">Artist</label>
+        <select name="artist" id="artist">
+            <?php foreach ($paintings as $painting) {
+                echo "<option value="/*API call to all paintings?*/ . ">Test</option>";
+            }
+            ?>
+        </select><br>
         Gallery <br>
 
 

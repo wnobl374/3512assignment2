@@ -20,6 +20,7 @@ if (isset($_GET['id'])) {
     <title>Painting Details</title>
     <meta charset=utf-8>
 </head>
+<?php printHeader(); ?>
 
 <body>
     <div>
