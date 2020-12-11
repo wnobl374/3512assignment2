@@ -7,8 +7,6 @@ if (isLoggedIn()) {
   $welcome = "Currently logged in: User " . $_SESSION['user'];
 }
 ?>
-
-
 <!DOCTYPE html>
 <html>
 
@@ -25,7 +23,7 @@ if (isLoggedIn()) {
 <body>
   <section class="section">
     <div class="hero">
-      <img src="images\monke_hero.jpg" width="500"><!-- remove this and implement as hero-->
+      <img src="images\monke_hero.jpg"><!-- remove this and implement as hero-->
       <div class="hero-text">
         <p class="subtitle">
           <a href="https://youtu.be/dQw4w9WgXcQ">JOIN</a>

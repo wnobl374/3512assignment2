@@ -1,6 +1,8 @@
 <?php
-require_once 'stock-config.inc.php';
-require_once 'db-classes.inc.php';
+ini_set('display_errors', 1);
+require_once 'includes/stock-config.inc.php';
+require_once 'lib/db-classes.class.php';
+require_once 'lib/DatabaseHelper.class.php';
 
 // Tell the browser to expect JSON rather than HTML
 header('Content-type: application/json');
@@ -14,13 +16,13 @@ try {
     ));
     $gateway = new GalleryDB($conn);
 
-    if (isCorrectQueryStringInfo("id"))
+    if (isCorrectQueryStringInfo("id")) {
         $paintings = $gateway->getGallery($_GET["id"]);
-    else
+    } else {
         $paintings = $gateway->getAll();
-
+    }
     echo json_encode($paintings, JSON_NUMERIC_CHECK);
-    $conn = NULL;
+    //$conn = NULL; unsure if this is needed
 } catch (Exception $e) {
     die($e->getMessage());
 }

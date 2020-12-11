@@ -1,6 +1,5 @@
 const galleryAPI = "../api-galleries.php";
 const paintingAPI = "../api-paintings.php?galleryID=";
-
 var map;
 // google map
 function initMap() {
@@ -42,35 +41,27 @@ document.addEventListener("DOMContentLoaded", function () {
         galleryContainer,
         paintingTable
     ];
-    const containersToHide = [
-        mapContainer,
-        paintingContainer,
-        infoContainer,
-        galleryContainer
-    ];
-    let smallImages = qs('#smallImages');
     let galleryList = qs('#galleryList');
     let ascendArtist = true;
     let ascendTitle = true;
     let ascendYear = true;
     // array of paintings to sort etc.
     let paintings = [];
-    let focusedPainting = '';
-    // index of focused painting in paintings array
-    let paintingIndex = 0;
-    let imgRatio = 0;
-    let imgWidth = 0;
-    let imgHeight = 0;
 
     fetch(galleryAPI)
-        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            response.json();
+        })
         .then(data => {
+            console.log(data);
             finishAnimation(data);
         }).catch(error => console.log(error));
 
     // hides the animation and shows the gallery list
     function finishAnimation(data) {
         qs('#loader').style.display = 'none';
+        // less paint displays the gallery list
         galleryList.classList.add('lessPaint');
         createGalleryList(data);
     }

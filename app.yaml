@@ -21,9 +21,19 @@ handlers:
   static_files: \1
   upload: .+\.(htm|html)$
   application_readable: true
+
+# Serve css?
+- url: /(.+\.(css))$
+  static_files: \1
+  upload: .+\.(css)$
+  application_readable: true
   
 # Serve php scripts
 - url: /(.+\.php)$
+  script: \1
+
+# Serve js scripts
+- url: /(.+\.js)$
   script: \1
   
 - url: /.*

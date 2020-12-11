@@ -12,6 +12,7 @@ if (!isLoggedIn()) {
 } else {
     $msg = "Favorites for " . $_SESSION['user'];
     $favorites = $_SESSION['favorites'];
+    echo $_SESSION['favorites'];
 } ?>
 
 <!DOCTYPE html>
@@ -28,11 +29,14 @@ if (!isLoggedIn()) {
     <table>
         <tr>
             <th></th>
+            <th></th>
+            <th></th>
         </tr>
         <?php foreach ($favorites as $fav) {
         ?><tr>
                 <td> <a href="single-painting.php?id=<?= $fav['PaintingID'] ?>"><img src="images\paintings\square\<?= $fav['ImageFileName'] ?>.jpg" width="150"></a>
                 <td> <a href="single-painting.php?id=<?= $fav['PaintingID'] ?>"><?= $fav['Title'] ?></a>
+                <td> <a href="single-painting.php?id=<?= $fav['PaintingID'] ?>">Remove from favorites</a>
             </tr>
         <?php
         }

@@ -40,20 +40,12 @@ document.addEventListener("DOMContentLoaded", function () {
   var galleryContainer = qs('#galleries');
   var paintingTable = qs('#paintings');
   var containers = [container, mapContainer, paintingContainer, infoContainer, galleryContainer, paintingTable];
-  var containersToHide = [mapContainer, paintingContainer, infoContainer, galleryContainer];
-  var smallImages = qs('#smallImages');
   var galleryList = qs('#galleryList');
   var ascendArtist = true;
   var ascendTitle = true;
   var ascendYear = true; // array of paintings to sort etc.
 
   var paintings = [];
-  var focusedPainting = ''; // index of focused painting in paintings array
-
-  var paintingIndex = 0;
-  var imgRatio = 0;
-  var imgWidth = 0;
-  var imgHeight = 0;
   fetch(galleryAPI).then(function (response) {
     return response.json();
   }).then(function (data) {
@@ -63,7 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }); // hides the animation and shows the gallery list
 
   function finishAnimation(data) {
-    qs('#loader').style.display = 'none';
+    qs('#loader').style.display = 'none'; // less paint displays the gallery list
+
     galleryList.classList.add('lessPaint');
     createGalleryList(data);
   } // creates the list of galleries

@@ -1,20 +1,4 @@
-<?php
-require_once('includes/header.php');
-require_once('lib/db-classes.class.php');
-require_once('lib/DatabaseHelper.class.php');
-
-$paintingGate = new PaintingDB($connection);
-if (isset($_GET['galleryID'])) {
-    $painting = $paintingGate->getAllForGallery($_GET["galleryID"]);
-} else {
-    $painting = NULL;
-}
-
-$galleryGate = new GalleryDB($connection);
-$galleries = $galleryGate->getAll();
-
-
-?>
+<?php require_once('includes/header.php'); ?>
 <!DOCTYPE html>
 <html>
 
@@ -55,38 +39,8 @@ $galleries = $galleryGate->getAll();
                 </div>
             </div>
         </div>
-        <div id="bigImage">
-            <div class="img-nav box">
-                <div class="loaderImg i1"><img src="img/loader.gif" height="750px"></div>
-                <div class="imageBox i2"></div>
-                <div class="navigate">
-                    <button title="Previous painting" type="button" id="previousImg" class="clickable nav">←</button>
-                    <button title="View galleries" type="button" id="home" class="clickable nav">⌂</button>
-                    <button title="Next painting" type="button" id="nextImg" class="clickable nav">→</button>
-                </div>
-            </div>
-            <div class="header box">
-                <h1></h1>
-                <h2></h2>
-                <h3></h3>
-            </div>
-            <div class="details box">
-                <div>
-                    <ul id="details-gallery"></ul>
-                </div>
-                <div>
-                    <ul id="details-painting"></ul>
-                </div>
-                <div class="colors"></div>
-            </div>
-            <div class="description box">
-                <p></p>
-            </div>
-
-        </div>
-        <div class="modal"></div>
     </main>
-    <script src="js/script.js"></script>
+    <script src="includes/galleryScript.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACy7NTZo1npL3xyjW0ZrPV52AZjGzXpUo&callback=initMap" async defer></script>
 </body>
 

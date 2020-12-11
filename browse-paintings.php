@@ -10,13 +10,13 @@ ini_set('display_errors', 1);
 $paintingGate = new PaintingDB($connection);
 if (isset($_GET['sort'])) {
     echo "Sorting by " . $_GET['sort'];
-    if ($_GET['sort'] = "artist") {
+    if ($_GET['sort'] == "artist") {
         echo "if statements are broken";
         $paintings = $paintingGate->getAllByArtist();
-    } else if ($_GET['sort'] = "year") {
+    } else if ($_GET['sort'] == "year") {
         echo "Should be sorting by Year";
         $paintings = $paintingGate->getAllByYear();
-    } else if ($_GET['sort'] = "title")
+    } else if ($_GET['sort'] == "title")
         $paintings = $paintingGate->getAllByTitle();
 } else if (isset($_GET['title'])) {
     $paintings = $paintingGate->getAllForTitle($_GET['title']);
