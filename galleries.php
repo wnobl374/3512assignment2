@@ -42,7 +42,7 @@ require_once('includes/header.php');
             </div>
         </div>
     </main>
-    <script src="includes/script.js"></script>
+    <script src="includes/galleryScript.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACy7NTZo1npL3xyjW0ZrPV52AZjGzXpUo&callback=initMap" async defer></script>
 </body>
 
