@@ -1,8 +1,5 @@
 <?php
-/*if (isset ($_SESSION['favorites'])){
-    if ($_SESSION)
-} else {
-    $_SESSION['favorites'] = 
+/*still need to experiment with this, I thought it was working but now seems to be encountering issues
 }*/
 if (isset($_GET['id']) && $_SESSION['user'] && (($_GET['id']))) {
     $paintingGate = new PaintingDB($connection);
