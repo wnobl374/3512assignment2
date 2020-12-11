@@ -1,5 +1,5 @@
-const galleryAPI = "../api-galleries.php";
-const paintingAPI = "../api-paintings.php?galleryID=";
+const galleryAPI = "../api-galleries.php?";
+const paintingAPI = "../api-paintings.php?gallery=";
 
 var map;
 // google map
