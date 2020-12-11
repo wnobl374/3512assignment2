@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', 1);
 require_once 'stock-config.inc.php';
 require_once 'db-classes.inc.php';
 

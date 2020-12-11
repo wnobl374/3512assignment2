@@ -9,7 +9,7 @@ function printHeader()
         <a href="index.php" class="headerButton">Home</a>
         <a href="about.php" class="headerButton">About</a>
         <a href="galleries.php" class="headerButton">Galleries</a>
-        <a href="browse-paintings.php" class="headerButton">Browse/Search</a>
+        <a href="browse-paintings.php" class="headerButton">Browse</a>
         <?php
         if (isset($_SESSION['user'])) {
         ?><a href="favorites.php" class="headerButton">Favorites</a>

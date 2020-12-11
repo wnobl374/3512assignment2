@@ -32,8 +32,8 @@ handlers:
 - url: /(.+\.php)$
   script: \1
 
-# Serve css scripts
-- url: /(.+\.css)$
+# Serve js scripts
+- url: /(.+\.js)$
   script: \1
   
 - url: /.*
