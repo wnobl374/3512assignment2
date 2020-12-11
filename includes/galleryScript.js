@@ -1,6 +1,5 @@
-const galleryAPI = "../api-galleries.php?";
-const paintingAPI = "../api-paintings.php?gallery=";
-
+const galleryAPI = "../api-galleries.php";
+const paintingAPI = "../api-paintings.php?galleryID=";
 var map;
 // google map
 function initMap() {
@@ -42,13 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
         galleryContainer,
         paintingTable
     ];
-    const containersToHide = [
-        mapContainer,
-        paintingContainer,
-        infoContainer,
-        galleryContainer
-    ];
-    let smallImages = qs('#smallImages');
     let galleryList = qs('#galleryList');
     let ascendArtist = true;
     let ascendTitle = true;
