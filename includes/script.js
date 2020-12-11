@@ -55,12 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let ascendYear = true;
     // array of paintings to sort etc.
     let paintings = [];
-    let focusedPainting = '';
-    // index of focused painting in paintings array
-    let paintingIndex = 0;
-    let imgRatio = 0;
-    let imgWidth = 0;
-    let imgHeight = 0;
 
     fetch(galleryAPI)
         .then(response => response.json())
@@ -71,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // hides the animation and shows the gallery list
     function finishAnimation(data) {
         qs('#loader').style.display = 'none';
+        // less paint displays the gallery list
         galleryList.classList.add('lessPaint');
         createGalleryList(data);
     }
