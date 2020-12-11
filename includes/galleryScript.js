@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
             response.json();
         })
         .then(data => {
+            console.log(data);
             finishAnimation(data);
         }).catch(error => console.log(error));
 
