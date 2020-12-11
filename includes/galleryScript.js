@@ -49,7 +49,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let paintings = [];
 
     fetch(galleryAPI)
-        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            response.json();
+        })
         .then(data => {
             finishAnimation(data);
         }).catch(error => console.log(error));
