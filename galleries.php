@@ -8,8 +8,8 @@ require_once('includes/header.php');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Galleries</title>
-    <link rel="stylesheet" href="./includes/reset.css">
-    <link rel="stylesheet" href="./includes/galleryStyle.css">
+    <link rel="stylesheet" href="includes/reset.css">
+    <link rel="stylesheet" href="includes/galleryStyle.css">
 </head>
 
 <body>
@@ -42,7 +42,7 @@ require_once('includes/header.php');
             </div>
         </div>
     </main>
-    <script src="./includes/script.js"></script>
+    <script src="includes/script.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACy7NTZo1npL3xyjW0ZrPV52AZjGzXpUo&callback=initMap" async defer></script>
 </body>
 

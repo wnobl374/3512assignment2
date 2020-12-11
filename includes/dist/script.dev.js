@@ -40,8 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var galleryContainer = qs('#galleries');
   var paintingTable = qs('#paintings');
   var containers = [container, mapContainer, paintingContainer, infoContainer, galleryContainer, paintingTable];
-  var containersToHide = [mapContainer, paintingContainer, infoContainer, galleryContainer];
-  var smallImages = qs('#smallImages');
   var galleryList = qs('#galleryList');
   var ascendArtist = true;
   var ascendTitle = true;
