@@ -17,7 +17,7 @@
         </div>
         <div id="galleries" class="box b2">
             <h2>Galleries</h2>
-            <img id="loader" src="images/loading/animation.gif" width="350px">
+            <img id="loader" src="images/loading/animation.gif" width="100%">
             <ul id="galleryList"></ul>
         </div>
         <div id="galleryInfo" class="box b3">
