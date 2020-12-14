@@ -22,15 +22,27 @@ handlers:
   upload: .+\.(htm|html)$
   application_readable: true
 
-# Serve css?
+# Serve css as static
 - url: /(.+\.(css))$
   static_files: \1
   upload: .+\.(css)$
+  application_readable: true
+
+#Serve JSON? Troubleshooting api errors
+- url: /(.+\.(json))$
+  static_files: \1
+  upload: .+\.(json)$
   application_readable: true
   
 # Serve php scripts
 - url: /(.+\.php)$
   script: \1
+
+# Serve php with "api" - need the regex for this
+- url: /(.+api).+$
+  static_files: \1
+  upload: /(.+api)$
+  application_readable: true
 
 # Serve js scripts
 - url: /(.+\.js)$

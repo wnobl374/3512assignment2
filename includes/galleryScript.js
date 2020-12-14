@@ -1,4 +1,4 @@
-const galleryAPI = "../api-galleries.php";
+const galleryAPI = "https://web2assignment.wm.r.appspot.com/api-galleries.php";
 const paintingAPI = "../api-paintings.php?galleryID=";
 var map;
 // google map
@@ -51,10 +51,10 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch(galleryAPI)
         .then(response => {
             console.log(response);
-            response.json();
+            return response.json();
         })
         .then(data => {
-            console.log(data);
+            console.log("data", data);
             finishAnimation(data);
         }).catch(error => console.log(error));
 
